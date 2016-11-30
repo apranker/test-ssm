@@ -14,8 +14,8 @@ import javax.annotation.Resource;
  *
  */
 @Service
-public class PaperService {
-    private static final Logger logger = LoggerFactory.getLogger(PaperService.class);
+public class WorkService {
+    private static final Logger logger = LoggerFactory.getLogger(WorkService.class);
     @Resource
     private WorkMapper WorkMapper;
 
