@@ -19,7 +19,7 @@ public class WorkService {
     @Resource
     private WorkMapper WorkMapper;
 
-    public Work query(int workId) {
+    public Work query(Integer workId) {
         logger.info("userid={}", workId);
         Work w1 =new Work(1,"1234");
         return w1;

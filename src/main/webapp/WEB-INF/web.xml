@@ -22,7 +22,7 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>EncodeFilter</filter-name>
-        <url-pattern>*.json</url-pattern>
+        <url-pattern>*.do</url-pattern>
     </filter-mapping>
 
     <filter>
@@ -63,7 +63,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>web</servlet-name>
-        <url-pattern>*.json</url-pattern>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
     <context-param>
         <param-name>contextConfigLocation</param-name>
