@@ -12,6 +12,5 @@
 
     <import resource="spring-beans.xml"/>
     <import resource="spring-db.xml"/>
-    <import resource="dubbo-provider.xml"/>
-    <import resource="duboo-consumer.xml"/>
+
 </beans> 

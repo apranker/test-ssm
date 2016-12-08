@@ -1,5 +1,6 @@
 package com.qunar.dubbo;
 
+import org.slf4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -7,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Created by dayong.gao on 2016/12/7.
  */
 public class LuncherProvider {
+    Logger logger = org.slf4j.LoggerFactory.getLogger(LuncherProvider.class);
     public static void main(String[] args) throws InterruptedException{
         LuncherProvider luncher=new LuncherProvider();
         luncher.start();
@@ -17,9 +19,8 @@ public class LuncherProvider {
         String configLocation="spring/dubbo-provider.xml";
         ApplicationContext context =new ClassPathXmlApplicationContext(configLocation);
         String[] names=context.getBeanDefinitionNames();
-        System.out.print("Beans:");
-        for(String string : names)
-            System.out.print(string+",");
-        System.out.println();
+        for(String str : names)
+            logger.info("Beans:{}",str);
+
     }
 }

@@ -14,7 +14,7 @@ public class TestServiceImpl implements TestService {
     }
 
     public MsgInfo returnMsgInfo(MsgInfo info) {
-        info.getMsgs().add("处理完毕");
+        info.getMsgs().add("接收完毕");
         return info;
     }
 }

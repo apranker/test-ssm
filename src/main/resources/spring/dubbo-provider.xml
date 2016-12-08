@@ -6,7 +6,7 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://code.alibabatech.com/schema/dubbo
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-    <dubbo:application name ="hello-world-app" />
+    <dubbo:application name ="hello-world" />
 
     <!--zookeeper注册中心 -->
     <dubbo:registry protocol ="zookeeper" address="127.0.0.1:2181" />

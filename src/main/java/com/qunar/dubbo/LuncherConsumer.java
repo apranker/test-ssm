@@ -2,6 +2,7 @@ package com.qunar.dubbo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
@@ -9,6 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 
 public class LuncherConsumer  {
+
+    Logger logger = org.slf4j.LoggerFactory.getLogger(LuncherProvider.class);
     public static void main(String[] args) throws InterruptedException{
         LuncherConsumer luncher=new LuncherConsumer();
         luncher.start();
@@ -20,23 +23,19 @@ public class LuncherConsumer  {
         ApplicationContext context =new ClassPathXmlApplicationContext(configLocation);
         TestService ds=(TestService) context.getBean("testService");
         String[] names=context.getBeanDefinitionNames();
-        System.out.print("Beans:");
-        for(String string : names) {
-            System.out.print(string);
-            System.out.print(",");
+        for(String str : names) {
+            logger.info("Beans:{}", str);
         }
-        System.out.println();
 
         MsgInfo info =new MsgInfo();
         info.setId(1);
-        info.setName("ruisheh");
+        info.setName("Test");
         List<String> msgs=new ArrayList<String>();
         msgs.add("I");
         msgs.add("am");
         msgs.add("test");
         info.setMsgs(msgs);
 
-
-        System.out.println(ds.returnMsgInfo(info).getMsgs());
+        logger.info("接收结果：{}",ds.returnMsgInfo(info).getMsgs());
     }
 }

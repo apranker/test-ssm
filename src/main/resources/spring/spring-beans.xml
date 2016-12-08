@@ -11,6 +11,8 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <mvc:annotation-driven />
-    <context:component-scan base-package="com.qunar.*" />
+    <context:component-scan base-package="com.qunar.dubbo" />
+    <context:component-scan base-package="com.qunar.controller" />
+    <context:component-scan base-package="com.qunar.service" />
     <tx:annotation-driven proxy-target-class="true" />
 </beans> 

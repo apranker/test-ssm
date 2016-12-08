@@ -7,9 +7,10 @@ import java.util.List;
  */
 public class MsgInfo implements Serializable {
     private static final long serialVersionUID = -2814022769568306965L;
-    int id;
-    String name;
-    List<String>msgs;
+
+    private int id;
+    private String name;
+    private List<String>msgs;
     public int getId() {
         return id;
     }
@@ -27,6 +28,14 @@ public class MsgInfo implements Serializable {
     }
     public void setMsgs(List<String> msgs) {
         this.msgs= msgs;
+    }
+    @Override
+    public String toString() {
+        return "MsgInfo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", msgs=" + msgs +
+                '}';
     }
 }
 
